@@ -30,7 +30,7 @@ iptables -A OUTPUT -o lo -j ACCEPT
 ip6tables -A INPUT -i lo -j ACCEPT
 ip6tables -A OUTPUT -o lo -j ACCEPT
 
-# Local network
+# Local Local Network traffic
 iptables -A INPUT -s 192.168.1.0/24 -d 192.168.1.0/24 -j ACCEPT
 iptables -A OUTPUT -s 192.168.1.0/24 -d 192.168.1.0/24 -j ACCEPT
 
@@ -55,7 +55,7 @@ ip6tables -A OUTPUT -j DROP
 ip6tables -A INPUT -j DROP
 ip6tables -A FORWARD -j DROP
 
-# Allow ports for PIA VPN connection. They could be different while using a different VPN provider
+# Allow ports for PIA VPN connection. They could be different if using a different VPN provider.
 # UDP Ports
 iptables -I OUTPUT 1 -p udp --destination-port 1194 -m comment --comment "Allow VPN connection" -j ACCEPT
 iptables -I OUTPUT 1 -p udp --destination-port 1197 -m comment --comment "Allow VPN connection" -j ACCEPT
