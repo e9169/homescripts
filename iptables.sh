@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# The idea was to create a killswitch for the downloads machine (Raspberry Pi) in case the VPN connection was lost. This killswitch allows network (local) traffic
+# Author: Eneko Perez
+# Date: 2018
+
+# The idea was to create a killswitch for the downloads machine (Raspberry Pi) in case the VPN connection was lost.
+# This killswitch allows network (local) traffic
 
 # Execute this script and then modify /etc/network/interfaces file this way for the network device:
 # pre-up iptables-restore < /etc/iptables.rules
