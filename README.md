@@ -1,1 +1,1 @@
-# homescripts
+# Scripts for home automation
