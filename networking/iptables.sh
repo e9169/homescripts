@@ -68,14 +68,14 @@ iptables -I OUTPUT 1 -p udp --destination-port 8080 -m comment --comment "Allow 
 iptables -I OUTPUT 1 -p udp --destination-port 9201 -m comment --comment "Allow VPN connection" -j ACCEPT
 
 # DNS
-iptables -I OUTPUT 1 -p udp --destination-port 53 -m comment --comment "Allow VPN connection" -j ACCEPT
+iptables -I OUTPUT 1 -p udp --destination-port 53 -m comment --comment "Allow VPN connection (DNS)" -j ACCEPT
 
 # TCP Ports
 iptables -I OUTPUT 1 -p tcp --destination-port 502 -m comment --comment "Allow VPN connection" -j ACCEPT
 iptables -I OUTPUT 1 -p tcp --destination-port 501 -m comment --comment "Allow VPN connection" -j ACCEPT
-iptables -I OUTPUT 1 -p tcp --destination-port 443 -m comment --comment "Allow VPN connection" -j ACCEPT
-iptables -I OUTPUT 1 -p tcp --destination-port 110 -m comment --comment "Allow VPN connection" -j ACCEPT
-iptables -I OUTPUT 1 -p tcp --destination-port 80 -m comment --comment "Allow VPN connection" -j ACCEPT
+iptables -I OUTPUT 1 -p tcp --destination-port 443 -m comment --comment "Allow VPN connection (HTTPS)" -j ACCEPT
+iptables -I OUTPUT 1 -p tcp --destination-port 110 -m comment --comment "Allow VPN connection (POP3)" -j ACCEPT
+iptables -I OUTPUT 1 -p tcp --destination-port 80 -m comment --comment "Allow VPN connection (HTTP)" -j ACCEPT
 
 echo "Saving"
 
