@@ -34,6 +34,10 @@ ip6tables -A OUTPUT -o lo -j ACCEPT
 iptables -A INPUT -s 192.168.1.0/24 -d 192.168.1.0/24 -j ACCEPT
 iptables -A OUTPUT -s 192.168.1.0/24 -d 192.168.1.0/24 -j ACCEPT
 
+# ASUS Router VPN
+iptables -A INPUT -s 10.8.0.0/24 -d 192.168.1.0/24 -j ACCEPT
+iptables -A OUTPUT -s 192.168.1.0/24 -d 10.8.0.0/24 -j ACCEPT
+
 # Allow incoming pings
 iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 
